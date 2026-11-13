@@ -1,0 +1,4 @@
+export type Meeting = {subject:string;subject_kind:'Company'|'Individual';meeting_date:string;meeting_time:string;timezone:string;meeting_type:string;objective:string};
+export type Source = {id:string;title:string;url:string;domain:string;published_date?:string|null;content:string;query:string};
+export type Claim = {id:string;text:string;status:string;explanation:string;source_ids:string[];category:string};
+export type Briefing = {id:string;meeting:Meeting;created_at:string;research_window:{start:string;end:string};executive_summary:string;developments:any[];key_people:any[];opportunities:string[];risks:string[];questions:string[];claims:Claim[];sources:Source[];readiness:{score:number;label:string;components:Record<string,number>;explanation:string};transparency:Record<string,any>;provider:string};
